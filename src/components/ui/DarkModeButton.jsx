@@ -1,9 +1,10 @@
 import React from 'react'
-import { useTheme } from '../providers/ThemeProvider'
+import { useTheme } from '../providers/ThemeProvider';
+import style from "./DarkModeButton.module.scss"
+import {BsFillMoonStarsFill, BsFillSunFill} from "react-icons/bs"
 
 export default function DarkModeButton() {
     const {theme, setTheme} = useTheme()
-    console.log(theme, setTheme);
 
     const handleClick = () => {
         setTheme("light")
@@ -16,8 +17,13 @@ export default function DarkModeButton() {
   return (
     <button
     onClick={() => handleClick()}
+    className={`${style.darkButton} ${theme === "dark" ? style.dark : ""}`}
     >
-        Switch color
+        {theme === "dark" ? (
+          <BsFillSunFill />
+        ) : (
+          <BsFillMoonStarsFill />
+        )}
     </button>
   )
 }

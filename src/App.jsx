@@ -4,6 +4,7 @@ import { useTheme } from './components/providers/ThemeProvider'
 import DarkModeButton from './components/ui/DarkModeButton'
 
 function App() {
+  console.log(window.matchMedia("(prefers-color-scheme: light)"));
   const {theme} = useTheme()
   const style = theme === "dark" ? {
     backgroundColor: "#000",

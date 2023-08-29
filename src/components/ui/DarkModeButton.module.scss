@@ -1,0 +1,17 @@
+.darkButton{
+    background: transparent;
+    height: 38px;
+    width: 38px;
+    font-weight: bold;
+    border: black 2px solid;
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+    svg{
+        font-size: 20px;
+    }
+    &.dark{
+        border: 1px solid white;
+        color: white;
+    }
+}
