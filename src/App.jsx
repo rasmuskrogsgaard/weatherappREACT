@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from "react";
 import './App.css'
+import HomePage from './components/homepage/Homepage.jsx'
 import { useTheme } from './components/providers/ThemeProvider'
 import DarkModeButton from './components/ui/DarkModeButton'
 import { Nav } from './components/Nav/Nav';
