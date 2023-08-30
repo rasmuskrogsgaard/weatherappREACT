@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import Icons from '../components/ui/Icons'
 
 export default function Weekpage() {
     const [errorMsg, setErrorMsg] = useState("")
+    const [data, setData] = useState(null)
+    const [day1, setDay1] = useState(null)
     const success = async (pos) => {
         const crd = pos.coords;
 
@@ -22,6 +25,16 @@ export default function Weekpage() {
             }
         })
 
+        setData(sortedData)
+
+        const day1 = sortedData.filter((d, i) => {
+            if(i < 24){
+                return d
+            }
+        })
+        setDay1(day1)
+        console.log(day1);
+
         console.log(sortedData);
     }
 
@@ -29,12 +42,23 @@ export default function Weekpage() {
         setErrorMsg("missing cordinates")
     }
 
-    navigator.geolocation.getCurrentPosition(success, error);
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(success, error);
+    }, [])
+    
   return (
     <main>
-        <p>
-            {errorMsg}
-        </p>
+        <h1>
+            oversigt
+        </h1>
+        <section>
+            {day1 && day1.map(d => (
+                <article key={d.time}>
+                    <Icons icon={d.wwo} />
+                    {new Date(d.time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                </article>
+            ))}
+        </section>
     </main>
   )
 }
