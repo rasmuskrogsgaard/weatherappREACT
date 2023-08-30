@@ -52,7 +52,7 @@ export const Nav = () => {
       ) : (
         <p>Finder din placering...</p>
       )}
-              <p>Current Location</p>
+              <p>Nuværende Location</p>
             </div>
             <ul>
               <li>

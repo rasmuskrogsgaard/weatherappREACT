@@ -6,6 +6,7 @@ import DarkModeButton from './components/ui/DarkModeButton'
 import { Nav } from './components/Nav/Nav';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Weekpage from './pages/Weekpage';
+import { About } from "./pages/Aboutus";
 import Allowpage from "./pages/Allowpage";
 
 
@@ -37,6 +38,9 @@ function App() {
       <BrowserRouter>
         <Nav/>
         <Routes>
+          <Route index element={<HomePage />} />
+          <Route path='/uge' element={<Weekpage />} />
+          <Route path='/about' element={<About />} />
           <Route index element={location ? <HomePage /> : <Navigate to="/allow" />} />
           <Route path='/uge' element={location ? <Weekpage /> : <Navigate to="/allow" />} />
           <Route path='/allow' element={!location ? <Allowpage /> : <Navigate to="/" />} />
