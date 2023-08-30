@@ -3,6 +3,10 @@ import './App.css'
 import HomePage from './components/homepage/Homepage.jsx'
 import { useTheme } from './components/providers/ThemeProvider'
 import DarkModeButton from './components/ui/DarkModeButton'
+import { Nav } from './components/Nav/Nav';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Weekpage from './pages/Weekpage';
+
 
 function App() {
   console.log(window.matchMedia("(prefers-color-scheme: light)"));
@@ -16,9 +20,15 @@ function App() {
   }
 
   return (
-    <>
-      <HomePage></HomePage>
-    </>
+    <main style={style}>
+      <Nav/>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<DarkModeButton />} />
+          <Route path='/uge' element={<Weekpage />} />
+        </Routes>
+      </BrowserRouter>
+    </ main>
   )
 }
 
