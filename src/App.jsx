@@ -6,6 +6,7 @@ import DarkModeButton from './components/ui/DarkModeButton'
 import { Nav } from './components/Nav/Nav';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Weekpage from './pages/Weekpage';
+import { About } from "./pages/Aboutus";
 
 
 function App() {
@@ -25,8 +26,9 @@ function App() {
       <BrowserRouter>
         <Nav/>
         <Routes>
-          <Route index element={<DarkModeButton />} />
+          <Route index element={<HomePage />} />
           <Route path='/uge' element={<Weekpage />} />
+          <Route path='/about' element={<About />} />
         </Routes>
       </BrowserRouter>
     </ main>
