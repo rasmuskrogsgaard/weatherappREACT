@@ -7,11 +7,16 @@
     border-radius: 4px;
     display: grid;
     place-content: center;
+    cursor: pointer;
     svg{
         font-size: 20px;
+        &:hover {
+            opacity: 60%;
+          }
     }
     &.dark{
         border: 1px solid white;
         color: white;
+        
     }
 }
