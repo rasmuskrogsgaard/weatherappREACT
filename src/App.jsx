@@ -20,8 +20,9 @@ function App() {
 
   return (
     <main style={style}>
-      <Nav/>
+      
       <BrowserRouter>
+        <Nav/>
         <Routes>
           <Route index element={<DarkModeButton />} />
           <Route path='/uge' element={<Weekpage />} />
