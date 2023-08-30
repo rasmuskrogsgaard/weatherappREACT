@@ -1,15 +1,22 @@
 .week{
-    padding: 20px;
+    padding: 20px 0px;
     h1{
         margin-bottom: 20px;
+        padding: 0 20px;
+
         font-weight: bold;
+    }
+    h2{
+        padding: 0 20px;
+        text-transform: capitalize;
     }
     .dayContainer{
         display: flex;
         gap: 20px;
         max-width: 100%;
         overflow: auto;
-        padding: 5px 15px;
+        padding: 5px 20px;
+        margin-top: 10px;
 
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE 10+ */
