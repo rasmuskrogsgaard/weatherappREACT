@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Icons from '../components/ui/Icons'
 import style from "./Weekpage.module.scss"
+import { useTheme } from '../components/providers/ThemeProvider'
 
 export default function Weekpage() {
     const [errorMsg, setErrorMsg] = useState("")
     const [data, setData] = useState(null)
     const [day1, setDay1] = useState(null)
+    const { theme } = useTheme()
+
     const success = async (pos) => {
         const crd = pos.coords;
 
@@ -135,7 +138,7 @@ export default function Weekpage() {
                     {day.day.map(d => (
                         <article
                         key={d.time}
-                        className={style.hour}
+                        className={`${style.hour} ${theme === "dark" ? style.dark : " "}`}
                         >
                             <Icons icon={d.wwo} />
                             {new Date(d.time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}

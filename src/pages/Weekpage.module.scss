@@ -35,6 +35,11 @@
             gap: 20px;
             text-align: center;
             font-size: 20px;
+            &.dark{
+                img{
+                    background-color: #1E1E1E;
+                }
+            }
             img{
                 background-color: #E7E7E3;
                 border-radius: 50%;
