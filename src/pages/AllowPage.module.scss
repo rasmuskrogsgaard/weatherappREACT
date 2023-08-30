@@ -1,0 +1,20 @@
+.allow{
+    height: 80vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+    &.dark{
+        color: white;
+        svg{
+            color: white;
+        }
+    }
+    svg{
+        margin: 0 auto;
+        font-size: 10rem;
+        color: black;
+    }
+    
+}
