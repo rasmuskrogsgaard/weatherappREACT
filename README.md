@@ -1,4 +1,4 @@
-gruppen: Rasmus, Morten, Niklas
+Gruppen: Rasmus, Morten, Niklas
 
 # React + Vite
 
