@@ -76,13 +76,38 @@ export default function Weekpage() {
             }
         })
 
-        const newData = [day1, day2, day3, day4, day5, day6, day7]
+        const newData = [
+            {
+                weekDay: new Date(day1[0].time).toLocaleDateString([], { weekday: 'long' }),
+                day: day1
+            },
+            {
+                weekDay: new Date(day2[0].time).toLocaleDateString([], { weekday: 'long' }),
+                day: day2
+            },
+            {
+                weekDay: new Date(day3[0].time).toLocaleDateString([], { weekday: 'long' }),
+                day: day3
+            },
+            {
+                weekDay: new Date(day4[0].time).toLocaleDateString([], { weekday: 'long' }),
+                day: day4
+            },
+            {
+                weekDay: new Date(day5[0].time).toLocaleDateString([], { weekday: 'long' }),
+                day: day5
+            },
+            {
+                weekDay: new Date(day6[0].time).toLocaleDateString([], { weekday: 'long' }),
+                day: day6
+            },
+            {
+                weekDay: new Date(day7[0].time).toLocaleDateString([], { weekday: 'long' }),
+                day: day7
+            },
+        ]
 
-        console.log(newData);
-        setDay1(day1)
-        console.log(day1);
-
-        console.log(sortedData);
+        setData(newData)
     }
 
     const error = () => {
@@ -92,26 +117,34 @@ export default function Weekpage() {
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(success, error);
     }, [])
+    console.log(data);
     
   return (
-    <main>
+    <main
+    className={style.week}
+    >
         <h1>
             oversigt
         </h1>
-        <h2>Monday</h2>
-        <section 
-        className={style.dayContainer}
-        >
-            {day1 && day1.map(d => (
-                <article
-                key={d.time}
-                className={style.hour}
+        {data && data.map(day => (
+            <section>
+                <h2>{day.weekDay}</h2>
+                <div
+                className={style.dayContainer}
                 >
-                    <Icons icon={d.wwo} />
-                    {new Date(d.time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
-                </article>
-            ))}
-        </section>
+                    {day.day.map(d => (
+                        <article
+                        key={d.time}
+                        className={style.hour}
+                        >
+                            <Icons icon={d.wwo} />
+                            {new Date(d.time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                        </article>
+                    ))}
+                </div>
+                
+            </section>
+        ))}
     </main>
   )
 }
