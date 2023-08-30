@@ -21,6 +21,7 @@ function App() {
 
   return (
     <main style={style}>
+
       <BrowserRouter>
         <Nav/>
         <Routes>
