@@ -5,6 +5,7 @@ import { MdPersonOutline } from "react-icons/md"
 import { useEffect, useState } from "react"
 import DarkModeButton from "../ui/DarkModeButton"
 import { useTheme } from "../providers/ThemeProvider"
+import { Link } from "react-router-dom"
 
 
 export const Nav = () => {
@@ -51,17 +52,17 @@ export const Nav = () => {
       ) : (
         <p>Finder din placering...</p>
       )}
-              <p>Current Location</p>
+              <p>Nuværende Location</p>
             </div>
             <ul>
               <li>
-                <a href=""><BiHomeAlt2/></a>
+                <Link to="/"><BiHomeAlt2/></Link>
               </li>
               <li>
-                <a href=""><LuCalendarDays/></a>
+                <Link to="/uge"><LuCalendarDays/></Link>
               </li>
               <li>
-                <a href=""><MdPersonOutline/></a>
+                <Link to="/about"><MdPersonOutline/></Link>
               </li>
               <li>
                 <DarkModeButton />
