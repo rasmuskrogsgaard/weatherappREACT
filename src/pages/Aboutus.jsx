@@ -1,30 +1,46 @@
+import { useState } from "react";
 import { useTheme } from "../components/providers/ThemeProvider";
 import style from "./Aboutus.module.scss"
+import Accordion from "../components/ui/Accordion";
+
 
 
 export const About = () => {
     const {theme} = useTheme()
+    
+
+    const data = [
+      {
+        title: 'Item 1',
+        content: 'Content for Item 1',
+      },
+      {
+        title: 'Item 2',
+        content: 'Content for Item 2',
+      },
+      {
+        title: 'Item 3',
+        content: 'Content for Item 3',
+      },
+      {
+        title: 'Item 4',
+        content: 'Content for Item 4',
+      },
+
+
+    ];
+
   return (
     <section className={style.about}>
         <h1>Om os</h1>
         <p>Vi har brugt</p>
-      <div className={style.cardcontainer}>
-        <article className={`${style.cards} ${theme === "dark" ? style.dark : " "}`}>
-          <h4>Hello</h4>
-          <p>Test</p>
-        </article>
-        <article className={`${style.cards} ${theme === "dark" ? style.dark : " "}`}>
-          <h4>Hello</h4>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit mollitia perspiciatis reiciendis excepturi quo dolorum molestias aliquid ea, quidem ratione, amet deserunt qui. Perspiciatis fugiat modi, unde odit molestias vel dolor totam nam blanditiis quisquam aliquid repellat dolorem omnis incidunt consequuntur neque provident? Dolorem voluptates fugit modi. Optio, repellat reprehenderit!</p>
-        </article>
-        <article className={`${style.cards} ${theme === "dark" ? style.dark : " "}`}>
-          <h4>Hello</h4>
-          <p>Test</p>
-        </article>
-        <article className={`${style.cards} ${theme === "dark" ? style.dark : " "}`}>
-          <h4>Hello</h4>
-          <p>Test</p>
-        </article>
+      <div className={style.cardcontainer} >
+        {data.map((item, index) => (
+        <Accordion key={index}
+        title={item.title}
+        content={item.content}
+        />
+      ))}
 
 
         <div>
