@@ -7,6 +7,7 @@ import Accordion from "../components/ui/Accordion";
 
 export const About = () => {
     const {theme} = useTheme()
+    const [open, setOpen] = useState(0)
     
 
     const data = [
@@ -36,9 +37,13 @@ export const About = () => {
         <p>Vi har brugt</p>
       <div className={style.cardcontainer} >
         {data.map((item, index) => (
-        <Accordion key={index}
+        <Accordion 
+        key={index}
         title={item.title}
         content={item.content}
+        choosen={open}
+        index={index}
+        setOpen={setOpen}
         />
       ))}
 
