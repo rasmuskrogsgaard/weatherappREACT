@@ -24,7 +24,8 @@ function App() {
       <Nav/>
       <BrowserRouter>
         <Routes>
-          <Route index element={<DarkModeButton />} />
+          
+          <Route index element={<HomePage />} />
           <Route path='/uge' element={<Weekpage />} />
         </Routes>
       </BrowserRouter>
