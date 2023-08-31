@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md'
 import style from "./Accordion.module.scss"
 import { useTheme } from '../providers/ThemeProvider'
+import {motion} from "framer-motion"
 
 export default function Accordion({title, content, choosen, index, setOpen}) {
     const {theme} = useTheme()
@@ -18,7 +19,18 @@ export default function Accordion({title, content, choosen, index, setOpen}) {
 
     console.log(theme);
   return (
-    <article className={`${style.cards} ${theme === "dark" ? style.dark : " "}`}>
+    <motion.article className={`${style.cards} ${theme === "dark" ? style.dark : " "}`}
+    initial={{
+        opacity: "0%",
+    }}
+    animate={{
+        opacity: "100%"
+    }}
+    transition={{
+        duration: 2,
+        delay: index / 2
+    }}
+    >
         <div 
         className={`${style.accheader} ${theme === "dark" ? style.dark : " "}`} 
         onClick={() => handleOpen()}
@@ -35,6 +47,6 @@ export default function Accordion({title, content, choosen, index, setOpen}) {
             </p>
            
         </div>}
-    </article>
+    </motion.article>
   )
 }
