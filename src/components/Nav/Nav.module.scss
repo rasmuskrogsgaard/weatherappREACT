@@ -35,10 +35,16 @@
         }
       }
 
-      p {
-        color: gray;
+      .location {
+        color: #1E1E1E;
         font-size: 0.8rem;
+
+        &.dark {
+          color: gray;
+
+        }  
       }
+      
     }
 
     ul {
