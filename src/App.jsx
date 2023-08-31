@@ -24,11 +24,11 @@ function App() {
   
 
   const style = theme === "dark" ? {
-    backgroundColor: "#000",
+    backgroundColor: "#121212",
     color: "#fff"
   } : {
     backgroundColor: "#fff",
-    color: "#000"
+    color: "#121212"
   }
 
   return (
