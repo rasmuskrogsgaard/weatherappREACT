@@ -12,20 +12,28 @@ export const About = () => {
 
     const data = [
       {
-        title: 'Item 1',
-        content: 'Content for Item 1',
+        title: 'Lavet af',
+        content: 'Rasmus, Morten, Niklas',
       },
       {
-        title: 'Item 2',
+        title: 'Vores app',
         content: 'Content for Item 2',
       },
       {
-        title: 'Item 3',
-        content: 'Content for Item 3',
+        title: 'React',
+        content: 'skriver vi brugt det til',
+        link: 'https://react-icons.github.io/react-icons',
+        link2: 'https://react-icons.github.io/react-icons'
       },
       {
-        title: 'Item 4',
+        title: 'Api',
+        content: 'Content for Item 3',
+        link: 'https://react-icons.github.io/react-icons'
+      },
+      {
+        title: 'Styling',
         content: 'Content for Item 4',
+        link: 'https://react-icons.github.io/react-icons'
       },
 
 
@@ -44,6 +52,7 @@ export const About = () => {
         choosen={open}
         index={index}
         setOpen={setOpen}
+        link={item.link}
         />
       ))}
 

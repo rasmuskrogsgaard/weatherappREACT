@@ -4,7 +4,8 @@ import style from "./Accordion.module.scss"
 import { useTheme } from '../providers/ThemeProvider'
 import {motion} from "framer-motion"
 
-export default function Accordion({title, content, choosen, index, setOpen}) {
+
+export default function Accordion({title, content, choosen, index, setOpen, link}) {
     const {theme} = useTheme()
     const [accordionOpen, setAccordionOpen] = useState(false)
 
@@ -45,6 +46,9 @@ export default function Accordion({title, content, choosen, index, setOpen}) {
             <p>
                 {content}
             </p>
+            <a href="">
+                {link}
+            </a>
            
         </div>}
     </motion.article>
