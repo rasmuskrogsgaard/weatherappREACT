@@ -19,6 +19,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
     max-width: 400px;
     overflow: auto;
     // padding: 5px 15px;
@@ -29,7 +30,6 @@
          
           &.dark {
             border: 2px solid white;
-            // background-color: gray;
           }
     }
   

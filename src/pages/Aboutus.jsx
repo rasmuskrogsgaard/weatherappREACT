@@ -2,7 +2,11 @@ import { useState } from "react";
 import { useTheme } from "../components/providers/ThemeProvider";
 import style from "./Aboutus.module.scss"
 import Accordion from "../components/ui/Accordion";
-
+import {BiLogoReact} from "react-icons/bi"
+import { BiLogoSass } from "react-icons/bi"
+import { AiOutlineLink } from "react-icons/ai"
+import { BsFillPersonFill } from "react-icons/bs"
+import { TiWeatherPartlySunny } from "react-icons/ti"
 
 
 export const About = () => {
@@ -13,27 +17,31 @@ export const About = () => {
     const data = [
       {
         title: 'Lavet af',
+        icon: <BsFillPersonFill />,
         content: 'Rasmus, Morten, Niklas',
       },
       {
         title: 'Vores app',
-        content: 'Content for Item 2',
+        icon: <TiWeatherPartlySunny />,
+        content: 'Vores vejr-app holder dig opdateret om vejret døgnet rundt. Få øjeblikkelig oversigt over dagens og den kommende uges vejr. Vælg mellem dark og light theme for at tilpasse din oplevelse.',
       },
       {
         title: 'React',
-        content: 'skriver vi brugt det til',
-        link: 'https://react-icons.github.io/react-icons',
-        link2: 'https://react-icons.github.io/react-icons'
+        icon: <BiLogoReact />,
+        content: 'Den er lavet i React med brug hvor react-icons er brugt til iconer og brugt og react-router-dom som vores router',
+        links: ['https://react-icons.github.io/react-icons','https://reactrouter.com/en/main'],
       },
       {
         title: 'Api',
-        content: 'Content for Item 3',
-        link: 'https://react-icons.github.io/react-icons'
+        icon: <AiOutlineLink />,
+        content: 'Der blevet brugt en vejr api til hent data af dit vejr og samt brugt en lokation api til finde din placering',
+        links: ['https://open-meteo.com/','https://nominatim.openstreetmap.org/ui/search.html'],
       },
       {
         title: 'Styling',
-        content: 'Content for Item 4',
-        link: 'https://react-icons.github.io/react-icons'
+        icon: <BiLogoSass />,
+        content: 'Brugt Figma til design af vores vejr app og brugt google fonts til style af text, og stylet det i sass',
+        links: ['https://fonts.google.com/specimen/Inter?query=inter','https://sass-lang.com/','https://www.figma.com/file/CCcmlhzQgGNmZzbRkZBUu8/Mono-Weather-UI-Kit-(Community)?type=design&node-id=1%3A172&mode=design&t=tydKCd04Yt3XXjXQ-1'],
       },
 
 
@@ -52,15 +60,11 @@ export const About = () => {
         choosen={open}
         index={index}
         setOpen={setOpen}
-        link={item.link}
+        links={item.links}
+        icon={item.icon}
         />
       ))}
-
-
-        <div>
-            <p>En "Om" side der forklarer hvilke teknologier appen bruger, samt deler relevante links til evt. styling biblioteker, icon biblioteker, API´er og andre node packages i har brugt.</p>
-        </div>
-        
+      
       </div>
     </section>
   );
