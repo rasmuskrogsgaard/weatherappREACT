@@ -5,7 +5,7 @@ import { useTheme } from '../providers/ThemeProvider'
 import {motion} from "framer-motion"
 
 
-export default function Accordion({title, content, choosen, index, setOpen, link}) {
+export default function Accordion({title, content, choosen, index, setOpen, links, icon}) {
     const {theme} = useTheme()
     const [accordionOpen, setAccordionOpen] = useState(false)
 
@@ -31,13 +31,13 @@ export default function Accordion({title, content, choosen, index, setOpen, link
         duration: 2,
         delay: index / 2
     }}
+    onClick={() => handleOpen()}
     >
         <div 
-        className={`${style.accheader} ${theme === "dark" ? style.dark : " "}`} 
-        onClick={() => handleOpen()}
+        className={`${style.accheader} ${theme === "dark" ? style.dark : " "} ${accordionOpen ? style.border : ""}`} 
         >
             <h3>
-                {title} 
+                {icon} {title} 
             </h3>
             {accordionOpen ? <MdOutlineKeyboardArrowDown /> : <MdOutlineKeyboardArrowUp />}
 
@@ -46,9 +46,11 @@ export default function Accordion({title, content, choosen, index, setOpen, link
             <p>
                 {content}
             </p>
-            <a href="">
-                {link}
-            </a>
+           {links && links.map(link => (
+                <a href={link} target='_blank'>
+                    {link}
+                </a> 
+           ))}
            
         </div>}
     </motion.article>
