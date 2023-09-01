@@ -6,5 +6,4 @@ Vores vejr-app holder dig opdateret om vejret døgnet rundt. Få øjeblikkelig o
 
 - **Framework:** [Vite(React)](https://vitejs.dev/)
 - **Styling:** [Scss](https://sass-lang.com/)
-- **api:** [Next Auth](https://next-auth.js.org/)
-- **ORM:** [Open meteo](https://open-meteo.com/)
+- **ORM:** [Open meteo](https://open-meteo.com/) 
