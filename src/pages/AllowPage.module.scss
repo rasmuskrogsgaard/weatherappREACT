@@ -5,6 +5,8 @@
     text-align: center;
     padding: 20px;
     gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
     &.dark{
         color: white;
         svg{
